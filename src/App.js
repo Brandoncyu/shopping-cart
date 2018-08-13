@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Header from './components/Header'
 import CartFooter from './components/CartFooter'
 import CartItems from './components/CartItems'
+
+const copyright = 2016
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <CartItems />
-        <CartFooter />
+        <CartFooter copyright={copyright}/>
       </div>
     );
   }
