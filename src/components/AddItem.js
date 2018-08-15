@@ -43,6 +43,7 @@ class AddItem extends Component{
         <div className="form-group">
           <label htmlFor="products">Product</label>
           <select name="products" onChange={this.onChange} className="form-control" id="products">
+            <option>Select</option>
             { this.props.productItems.map((productItem, index) => <option key={index} value={ productItem.id }> {productItem.name} </option>) }
           </select>
         </div>

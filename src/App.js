@@ -3,6 +3,7 @@ import Header from './components/Header'
 import CartFooter from './components/CartFooter'
 import CartItems from './components/CartItems'
 import AddItem from './components/AddItem'
+import Total from './components/Total'
 
 const copyright = 2016
 
@@ -54,6 +55,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <CartItems cartItemsList={this.state.cartItemsList} />
+        <Total cartItemsList={this.state.cartItemsList} />
         <AddItem productItems={product} addToCart={this.addToCart} />
         <CartFooter copyright={copyright}/>
       </div>
