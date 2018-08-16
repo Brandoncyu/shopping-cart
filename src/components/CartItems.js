@@ -2,6 +2,7 @@ import React from 'react'
 import CartItemComponent from './CartItemComponent'
 
 const CartItems = ({cartItemsList}) =>{
+  console.log(cartItemsList)
   return (<div className="container">
   <h1>Cart Items</h1>
   <div className="list-group">

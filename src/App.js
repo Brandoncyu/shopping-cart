@@ -24,6 +24,7 @@ class App extends Component {
     let items = itemsPull.data.map(element => {
       let product = products.data.find(e => e.id === element.product_id)
       element.product = product
+      element.product.id = parseInt(element.product.id)
       return element
     })
 
@@ -34,10 +35,10 @@ class App extends Component {
     })
   }
 
-  addToCart = ({quantity, product}) => {
-    let id = this.state.cartItemsList.length + 1
-    let newArray = [ ...this.state.cartItemsList, { id, product, quantity } ]
-    this.setState( {product: this.state.product, cartItemsList: newArray })
+  addToCart = async({quantity, product}) => {
+    const response = await axios.post(`http://localhost:8082/api/products/${product.id}/items`, {product: `${product.id}`, quantity:`${parseInt(quantity)}`})
+
+    this.componentDidMount()
   }
 
 
