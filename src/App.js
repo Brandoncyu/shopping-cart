@@ -18,8 +18,8 @@ class App extends Component {
   }
 
   async componentDidMount(){
-    const itemsPull = await axios.get('http://localhost:8082/api/items')
-    const products = await axios.get('http://localhost:8082/api/products')
+    const itemsPull = await axios.get('https://fierce-shore-53341.herokuapp.com/api/items')
+    const products = await axios.get('https://fierce-shore-53341.herokuapp.com/api/products')
 
     let items = itemsPull.data.map(element => {
       let product = products.data.find(e => e.id === element.product_id)
